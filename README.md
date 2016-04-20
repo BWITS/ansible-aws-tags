@@ -24,7 +24,7 @@ options:
       - aws region
 ```
 
-###EXAMPLES
+###Examples
 ```
    # save aws_tags.py to library folder
 
