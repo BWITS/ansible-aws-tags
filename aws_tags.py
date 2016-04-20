@@ -47,7 +47,7 @@ def main():
   for key in instance.tags:
     facts[key] = instance.tags[key]
 
-  module.exit_json(changed=False, tags=facts)
+  module.exit_json(changed=False, ansible_facts=facts)
 
 from ansible.module_utils.basic import *
 if __name__ == '__main__':
