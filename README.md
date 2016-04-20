@@ -24,10 +24,10 @@ options:
 
 ###EXAMPLES
 ```
-   # save it to library folder
+   # save aws_tags.py to library folder
 
    # usage
-   $ cat mail.yml
+   $ cat roles/common/tasks/main.yml
    
    - action: aws_tags instance_id=i-ac13f01d region=us-west-2
 ```
