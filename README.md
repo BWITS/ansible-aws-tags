@@ -2,6 +2,8 @@
 
 The output from this module is a bunch of Ansible facts
 
+Tested in Ansible 2.0.1+
+
 ```
 module: aws_tags
 short_description: Return ec2 instance tags
