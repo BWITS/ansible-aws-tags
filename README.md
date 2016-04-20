@@ -1,4 +1,4 @@
-### Quick and dirty Ansible module to get aws ec2 instances tags
+### Ansible module to get aws ec2 instances tags
 
 The output from this module is a bunch of Ansible facts
 
@@ -24,5 +24,5 @@ options:
 
 ###EXAMPLES
 
-    action: aws_tags instance_id=i-cc13f01d region=ap-southeast-2
+    action: aws_tags instance_id=i-ac13f01d region=us-west-2
 
