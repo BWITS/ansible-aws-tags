@@ -23,11 +23,11 @@ options:
 ```
 
 ###EXAMPLES
-
+```
    # save it to library folder
 
    # usage
    $ cat mail.yml
    
    - action: aws_tags instance_id=i-ac13f01d region=us-west-2
-
+```
