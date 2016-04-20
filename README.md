@@ -33,3 +33,17 @@ options:
    
    - action: aws_tags instance_id=i-ac13f01d region=us-west-2
 ```
+
+###Best practice
+
+Suppose when you created the instances, assign IAM role with `AmazonEC2ReadOnlyAccess` policy. 
+
+`aws_tags` module works perfect with ansible `ec2_facts` module
+
+```
+- name: get ec2 facts
+  action: ec2_facts
+
+- name: get instance tags
+  action: aws_tags instance_id={{ ansible_ec2_instance_id }} region={{ ansible_ec2_placement_region }}
+```
