@@ -45,7 +45,7 @@ def main():
   facts = {}
 
   for key in instance.tags:
-    facts[key] = instance.tags[key]
+    facts['ansible_ec2_tag_' + key] = instance.tags[key]
 
   module.exit_json(changed=False, ansible_facts=facts)
 
