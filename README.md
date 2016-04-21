@@ -46,4 +46,7 @@ Suppose when you created the instances, assign IAM role with `AmazonEC2ReadOnlyA
 
 - name: get instance tags
   action: aws_tags instance_id={{ ansible_ec2_instance_id }} region={{ ansible_ec2_placement_region }}
+  
+- name: export aws_tags
+  command: echo {{ Name }}
 ```
