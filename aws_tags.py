@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 # Ansible module to get aws ec2 instances tags
 #
 # The output from this module is a bunch of Ansible facts
