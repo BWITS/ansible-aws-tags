@@ -26,7 +26,7 @@ options:
 
 ### outputs
 
-Tag facts are renamed to `ansible_ec2_instance_TAGS`. For example, the ec2 instance has to tags: `Name` and `UUID`. The output facts will be changed to `ansible_ec2_tag_Name` and `ansible_ec2_tag_UUID`
+Tag fact keys are renamed to `ansible_ec2_instance_TAGS`. For example, if this ec2 instance has two tags: `Name` and `UUID`. The output fact keys will be changed to `ansible_ec2_tag_Name` and `ansible_ec2_tag_UUID`
 
 ###Examples
 ```
