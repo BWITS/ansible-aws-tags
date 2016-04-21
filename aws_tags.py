@@ -1,7 +1,22 @@
 #!/usr/bin/python
+#
+# This is a free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This Ansible library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this library.  If not, see <http://www.gnu.org/licenses/>.
+#
 # Ansible module to get aws ec2 instances tags
 #
-# The output from this module is a bunch of Ansible facts
+# The output from this module is a bunch of Ansible facts, README at:
+# https://github.com/BWITS/ansible-aws-tags/blob/master/README.md
 
 DOCUMENTATION = '''
 ---
@@ -9,7 +24,7 @@ module: aws_tags
 short_description: Return ec2 instance tags
 description:
    - Given an instance id and its region, return its tags, such as Name, etc.
-version_added: "1.0"
+version_added: "2.1"
 author: Bill Wang
 requirements:
   - none
@@ -27,6 +42,11 @@ options:
 EXAMPLES = '''
 action: aws_tags instance_id=i-ac13f01d region=us-west-2
 '''
+
+RETURN = '''
+  ansible_ec2_tag_KEYS:
+     description: ec2 instance tags key and value.
+''' 
 
 from boto import ec2
 
