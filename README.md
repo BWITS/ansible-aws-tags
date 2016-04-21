@@ -24,6 +24,10 @@ options:
       - aws region
 ```
 
+### outputs
+
+Tag facts are renamed to `ansible_ec2_instance_TAGS`. For example, the ec2 instance has to tags: `Name` and `UUID`. The output facts will be changed to `ansible_ec2_tag_Name` and `ansible_ec2_tag_UUID`
+
 ###Examples
 ```
    # save aws_tags.py to library folder
@@ -48,5 +52,5 @@ Suppose when you created the instances, assign IAM role with `AmazonEC2ReadOnlyA
   action: aws_tags instance_id={{ ansible_ec2_instance_id }} region={{ ansible_ec2_placement_region }}
   
 - name: export aws_tags
-  command: echo {{ Name }}
+  command: echo {{ ansible_ec2_tag_Name }}
 ```
