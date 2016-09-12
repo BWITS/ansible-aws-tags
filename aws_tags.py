@@ -56,10 +56,20 @@ def main():
       argument_spec = dict(
           instance_id = dict(required=True),
           region = dict(required=True),
+          aws_access_key = dict(required=False),
+          aws_secret_key = dict(required=False),
       )
   )
 
-  conn = ec2.connect_to_region(module.params['region'])
+  if 'aws_access_key' not in module.params:
+    module.params['aws_access_key'] = None
+    module.params['aws_secret_key'] = None
+
+  conn = ec2.connect_to_region(
+    module.params['region']
+    aws_access_key_id=module.params['aws_access_key'],
+    aws_secret_access_key=module.params['aws_secret_key']
+  )
   instance = conn.get_only_instances(module.params['instance_id'])[0]
 
   facts = {}
